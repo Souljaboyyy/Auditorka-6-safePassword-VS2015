@@ -9,7 +9,7 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 int checkPassword(char* mass,int kolvo) {
-	int i = 0, flag[4] = { 0 },rate =0,average = 0;
+	int i = 0, flag[4] = { 0 },rate =1,average = 0;
 	if (kolvo < 8)
 		return rate;
 	for (i; i < kolvo; i++)
@@ -29,7 +29,7 @@ int checkPassword(char* mass,int kolvo) {
 	if (average == 1)
 		return rate;
 	else 
-		if ((kolvo < 15) || (average < 3))
+		if ((kolvo < 15) && (average < 3))
 		rate = 2;
 	else
 		 if (average == 3)
